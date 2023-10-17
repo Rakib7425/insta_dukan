@@ -1,0 +1,32 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Ferry from Port Blair to Havelock",
+            "description": "Enjoy a scenic journey from Port Blair to Havelock Island.",
+            "image": "https://cdn.experienceandamans.com/images/ferry-from-port-blair-to-havelock-island.jpg",
+            "price": 50
+        },
+        {
+            "id": 2,
+            "name": "Ferry from Havelock to Neil",
+            "description": "Travel from Havelock to Neil Island with ease.",
+            "image": "https://cdn.experienceandamans.com/images/ferry-from-havelock-island-to-neil-island.jpg",
+            "price": 40
+        },
+        {
+            "id": 3,
+            "name": "Ferry from Neil to Port Blair",
+            "description": "Return to Port Blair from Neil Island safely.",
+            "image": "https://cdn.experienceandamans.com/images/ferry-from-neil-to-port-blair-625d274580fc4.jpg",
+            "price": 60
+        },
+        {
+            "id": 4,
+            "name": "Ferry from Port Blair to Havelock to Neil and back to Port Blair",
+            "description": "An all-in-one ferry journey covering multiple islands.",
+            "image": "https://www.experienceandamans.com/assets/images/ferry-in-andaman-route-map-mobile.png",
+            "price": 130
+        }
+    ]
+}
