@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Modal, Form, Input, Button } from "antd";
-import { useObserver } from "mobx-react-lite";
 import CartStore from "../../stores/cartStore";
 
 export default function Cart() {
@@ -14,8 +13,8 @@ export default function Cart() {
 		// Handle passenger information and checkout here
 	};
 
-	return useObserver(() => (
-		<div>
+	return (
+		<>
 			<h1>Shopping Cart</h1>
 			{CartStore.items.map((item) => (
 				<div key={item.id}>
@@ -23,6 +22,7 @@ export default function Cart() {
 					<p>Price: ${item.price}</p>
 				</div>
 			))}
+
 			<Button onClick={showModal}>Checkout</Button>
 			<Modal
 				title='Passenger Information'
@@ -42,6 +42,6 @@ export default function Cart() {
 					</Button>
 				</Form>
 			</Modal>
-		</div>
-	));
+		</>
+	);
 }
