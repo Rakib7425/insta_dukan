@@ -38,10 +38,10 @@ export default function Cart() {
 	const onFinish = (values) => {
 		// Handle passenger information and checkout here
 		// window.alert("hello");
-		console.log(values.name);
+		console.log(values);
+		setOpen(false);
 		toast.success(`Successfully Booked`)
-		router.push('/')
-
+		// router.push('/')
 
 	};
 
