@@ -12,15 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>{children}
-
-				<ToastContainer
-					position="bottom-right"
-					autoClose={1200}
-					theme="dark"
-				/>
+			<body className={inter.className}>
+				{children}
+				<ToastContainer position='bottom-right' autoClose={1200} theme='dark' />
 			</body>
-
 		</html>
 	);
 }
