@@ -1,6 +1,7 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from "../components/Header";
 import Loader from "@/components/Loader";
 import MainContent from "./MainContent";
@@ -9,8 +10,8 @@ export default function Home() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [products, setProducts] = useState([]);
 	useEffect(() => {
-		setIsLoading(true);
 		async function fetchProducts() {
+			setIsLoading(true);
 			try {
 				const res = await fetch("https://ferry-api.onrender.com/products");
 				const data = await res.json();
@@ -37,6 +38,11 @@ export default function Home() {
 	return (
 		<>
 			<Header />
+			<ToastContainer
+				position="bottom-right"
+				autoClose={1200}
+				theme="dark"
+			/>
 			<MainContent products={products} />
 		</>
 	);

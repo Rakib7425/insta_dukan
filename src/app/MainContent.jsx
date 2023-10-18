@@ -2,9 +2,15 @@ import cartStore from '@/stores/cartStore'
 import { Button, Card } from 'antd'
 import Meta from 'antd/es/card/Meta'
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const MainContent = ({ products }) => {
 
+
+    const addToCart = (product) => {
+        cartStore.addToCart(product);
+        toast.success(`Product added to cart!`);
+    }
     return (
         <div className='flex-col flex-wrap justify-between items-center gap-4 text-center h-screen'>
             <h1 className='text-2xl m-10'>Ferry Services</h1>
@@ -31,7 +37,7 @@ const MainContent = ({ products }) => {
                                 {/* <h5 className='text-lg'>{product.name}</h5> */}
                                 <Meta title={product.name} />
                                 <p>Price: ₹{product.price}</p>
-                                <Button onClick={() => cartStore.addToCart(product)} className='border border-blue-500 my-2 hover:bg-blue-100'>
+                                <Button onClick={() => addToCart(product)} className='border border-blue-500 my-2 hover:bg-blue-100'>
                                     Add to Cart
                                 </Button>
                                 <p>{product.description}</p>

@@ -13,7 +13,7 @@ const Header = () => {
     }, [itemsLength])
 
     return (
-        <div className="header w-full flex gap-4 justify-between items-center text-xl  bg-cyan-900 h-12 rounded-md ">
+        <div className="header w-full flex gap-4 justify-between items-center text-xl shadow-xl bg-cyan-900 h-12 rounded-md ">
             <div className="logo mx-6 flex mt-1">
                 <Link href='/' className='hover:text-yellow-200 duration-100 '>
                     <img src='/iFerry.png' alt="logo" className='h-10' />
