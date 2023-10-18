@@ -7,11 +7,16 @@ import Header from "@/components/Header";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import CartItem from "@/components/CartItem";
+import CustomFormItem from "@/components/CustomFormItem";
 
 export default function Cart() {
 	const [open, setOpen] = useState(false);
 	const [noOfPassenger, setNoOfPassenger] = useState(1);
 	const [tempArr, setTempArr] = useState([]);
+	const [email, setEmail] = useState("");
+	const [passengerNames, setPassengerNames] = useState([]);
+
 	const router = useRouter();
 
 	let arr = [];
@@ -38,9 +43,12 @@ export default function Cart() {
 	const onFinish = (values) => {
 		// Handle passenger information and checkout here
 		// window.alert("hello");
-		console.log(values);
+		console.log("Number of Passengers:", noOfPassenger);
+		console.log("Email:", email);
+		console.log("Passenger Names:", passengerNames);
+
 		setOpen(false);
-		toast.success(`Successfully Booked`)
+		toast.success(`Successfully Booked`);
 		// router.push('/')
 
 	};
@@ -74,27 +82,7 @@ export default function Cart() {
 						{
 							CartStore.items.map((item, i) => (
 								<div key={i} className="flex flex-col gap-20 justify-center items-center">
-									<div className="card">
-										<Card
-											hoverable
-											style={{
-												width: 300,
-											}}
-											title={item.name}
-											cover={
-												// eslint-disable-next-line @next/next/no-img-element
-												<img
-													src={`${item.image}`}
-													alt={item.name}
-													width={300}
-													height={300}
-												/>
-											}
-										>
-											<p>Price: ₹{item.price}</p>
-											<p>{item.description}</p>
-										</Card>
-									</div>
+									<CartItem item={item} />
 								</div>
 							))}
 					</>
@@ -122,7 +110,7 @@ export default function Cart() {
 						<Form.Item name='noOfPassenger' label='Number of Passengers'>
 							<Select
 								showSearch
-								initialValues={1}
+								initialvalues={1}
 
 								style={{
 									width: "100%",
@@ -140,18 +128,17 @@ export default function Cart() {
 						</Form.Item>
 
 						<Form.Item name='email' label='Email' required >
-							<Input type="email" />
+							<Input
+								type="email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+							/>
 						</Form.Item>
-						{
-							// For rendering the name field for number of Passenger
-							tempArr && tempArr.map((item) => {
-								return (
-									<Form.Item name={`${item}`} label={`P${item + 1} Name`} key={item} required>
-										<Input type="text" />
-									</Form.Item>
-								)
-							})
-						}
+
+						{tempArr &&
+							tempArr.map((item) => (
+								<CustomFormItem item={item} key={item} setPassengerNames={setPassengerNames} passengerNames={passengerNames} />
+							))}
 					</Form>
 				</Modal>
 			</div >
