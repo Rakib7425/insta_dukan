@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from "../components/Header";
 import Loader from "@/components/Loader";
@@ -38,11 +38,6 @@ export default function Home() {
 	return (
 		<>
 			<Header />
-			<ToastContainer
-				position="bottom-right"
-				autoClose={1200}
-				theme="dark"
-			/>
 			<MainContent products={products} />
 		</>
 	);
