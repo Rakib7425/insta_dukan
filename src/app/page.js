@@ -9,9 +9,9 @@ export default function Home() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [products, setProducts] = useState([]);
 	useEffect(() => {
+		setIsLoading(true);
 		async function fetchProducts() {
 			try {
-				setIsLoading(true);
 				const res = await fetch("https://ferry-api.onrender.com/products");
 				const data = await res.json();
 				setProducts(data);

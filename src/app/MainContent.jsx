@@ -5,10 +5,8 @@ import React, { useState } from 'react'
 
 const MainContent = ({ products }) => {
 
-
-
     return (
-        <div className='flex-col flex-wrap justify-between items-center gap-4 text-center'>
+        <div className='flex-col flex-wrap justify-between items-center gap-4 text-center h-screen'>
             <h1 className='text-2xl m-10'>Ferry Services</h1>
             <div className='flex flex-col flex-wrap justify-between items-center gap-4 md:flex-row text-center'>
                 {
@@ -18,7 +16,7 @@ const MainContent = ({ products }) => {
                             <Card
                                 hoverable
                                 style={{
-                                    width: 300,
+                                    width: 310,
                                 }}
                                 cover={
                                     // eslint-disable-next-line @next/next/no-img-element
