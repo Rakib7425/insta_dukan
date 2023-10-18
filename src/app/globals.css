@@ -9,7 +9,48 @@
 
 	--background-end-rgb: 255, 255, 255;
 }
+::-webkit-scrollbar {
+	display: block;
+	width: 8px;
+	scroll-behavior: smooth;
+}
 
+body::-webkit-scrollbar-thumb {
+	border-radius: 30%;
+	background: rgb(112, 25, 122);
+	background: -moz-linear-gradient(
+		205deg,
+		rgba(112, 25, 122, 1) 0%,
+		rgb(176, 17, 52) 20%,
+		rgb(18, 56, 183) 37%,
+		rgba(105, 81, 178, 1) 44%,
+		rgba(70, 148, 151, 1) 59%,
+		rgba(145, 2, 210, 1) 79%,
+		rgba(0, 212, 255, 1) 98%
+	);
+	background: -webkit-linear-gradient(
+		205deg,
+		rgba(112, 25, 122, 1) 0%,
+		rgba(5, 76, 197, 1) 20%,
+		rgba(145, 2, 210, 1) 37%,
+		rgba(105, 81, 178, 1) 44%,
+		rgba(70, 148, 151, 1) 59%,
+		rgba(145, 2, 210, 1) 79%,
+		rgba(0, 212, 255, 1) 98%
+	);
+	background: linear-gradient(
+		205deg,
+		rgba(112, 25, 122, 1) 0%,
+		rgba(5, 76, 197, 1) 20%,
+		rgba(145, 2, 210, 1) 37%,
+		rgba(105, 81, 178, 1) 44%,
+		rgb(180, 15, 35) 59%,
+		rgba(145, 2, 210, 1) 79%,
+		rgba(190, 19, 19, 0.803) 98%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#70197a", endColorstr="#00d4ff", GradientType=1);
+	scroll-behavior: smooth;
+}
 @media (prefers-color-scheme: dark) {
 	:root {
 		--foreground-rgb: 245, 225, 215;

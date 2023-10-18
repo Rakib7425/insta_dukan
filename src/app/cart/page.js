@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import CartItem from "@/components/CartItem";
 import CustomFormItem from "@/components/CustomFormItem";
+import { useObserver } from "mobx-react-lite";
 
 export default function Cart() {
 	const [open, setOpen] = useState(false);
@@ -50,6 +51,7 @@ export default function Cart() {
 		setOpen(false);
 		toast.success(`Successfully Booked`);
 		// router.push('/')
+		CartStore.clearCart();
 
 	};
 
@@ -107,7 +109,7 @@ export default function Cart() {
 
 				>
 					<Form name='passenger_info' onFinish={onFinish}>
-						<Form.Item name='noOfPassenger' label='Number of Passengers'>
+						<Form.Item name='noOfPassenger' label='Number of Passengers' required>
 							<Select
 								showSearch
 								initialvalues={1}

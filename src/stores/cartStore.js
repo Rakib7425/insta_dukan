@@ -5,7 +5,8 @@ import { useObserver } from "mobx-react-lite";
 class CartStore {
 	items = [];
 	length = 0;
-
+	bookedItems = [];
+	bookedItemsLength = [];
 	constructor() {
 		makeAutoObservable(this);
 	}
@@ -15,6 +16,17 @@ class CartStore {
 		this.items.push(product);
 		this.length = this.items.length;
 	}
+
+	// Method to add a product to the booked section.
+	addToBooked(product) {
+		this.bookedItems.push(product);
+		this.bookedItemsLength = this.bookedItemsLength.length;
+	}
+	clearCart() {
+		this.items = [];
+		this.length = this.items.length;
+	}
+
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

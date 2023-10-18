@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { ToastContainer } from 'react-toastify';
+import { useObserver } from "mobx-react-lite";
 import 'react-toastify/dist/ReactToastify.css';
 import Header from "../components/Header";
 import Loader from "@/components/Loader";
