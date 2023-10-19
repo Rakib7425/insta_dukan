@@ -34,7 +34,6 @@ export default function Cart() {
 		};
 		makeTempArr();
 		setItems(CartStore.items);
-		// console.log(arr);
 	}, [noOfPassenger, items.length]);
 
 	const showModal = () => {
@@ -55,18 +54,25 @@ export default function Cart() {
 		}
 	};
 
+	// For set No Of Passenger
 	const handleChange = (value) => {
-		// console.log(Number(value));
 		setNoOfPassenger(Number(value));
 	};
 
+	// Fro set Date
 	const dateChange = (date, dateString) => {
-		// console.log(dateString);
 		setDate(dateString);
 	};
+
 	const handleClearCart = () => {
-		CartStore.clearCart();
-		setItems([]);
+		try {
+			CartStore.clearCart();
+			setItems([]);
+			toast.success(`Successfully Cleared !`);
+		} catch (error) {
+			console.log(error);
+			toast.error(`Some error occurred`);
+		}
 	};
 
 	//

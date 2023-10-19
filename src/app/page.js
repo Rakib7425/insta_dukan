@@ -31,7 +31,7 @@ export default function Home() {
 		}
 
 		fetchProducts();
-		// ? Check if items already available
+		// ? TODO Check if items already available
 		/* if (initialProducts.length > 0) {
 			console.log(initialProducts);
 			setInitialProducts(products);

@@ -18,13 +18,11 @@ const BookedData = () => {
 
 	useEffect(() => {
 		setItems(CartStore.bookedItems);
-		// console.log(items.passengerNames);
 
 		const makePassengerNames = () => {
 			let tempNames = passengerName.map((item) => {
 				return item;
 			});
-			// console.log(tempNames);
 			setPassengerName(tempNames);
 		};
 
@@ -34,6 +32,7 @@ const BookedData = () => {
 	return (
 		<section className='min-h-screen w-full '>
 			<Header />
+			{/* Booked data section */}
 			<div className='header-text flex gap-20 flex-col items-center justify-center'>
 				<h1 className={`${items.length < 1 ? "mt-12" : "my-12"} text-2xl text-center`}>
 					{items.length < 1 ? `Oh Ho! No Booking Found.` : `Your Booked Products`}
