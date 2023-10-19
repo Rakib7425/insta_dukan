@@ -18,6 +18,7 @@ export default function Cart() {
 	const [email, setEmail] = useState("");
 	const [date, setDate] = useState("");
 	const [passengerNames, setPassengerNames] = useState([]);
+	const [items, setItems] = useState(CartStore.items);
 
 	const router = useRouter();
 
@@ -53,13 +54,14 @@ export default function Cart() {
 		};
 		CartStore.addToBooked(product);
 		// CartStore.clearCart();
-		// router.push('/')
+		router.push("/booked");
 	};
 
 	const handleChange = (value) => {
 		// console.log(Number(value));
 		setNoOfPassenger(Number(value));
 	};
+
 	const dateChange = (date, dateString) => {
 		// console.log(dateString);
 		setDate(dateString);
@@ -72,13 +74,13 @@ export default function Cart() {
 			</div>
 
 			{/* Cart Section */}
-			{CartStore.items.length > 0 && (
+			{items.length > 0 && (
 				<div className='cart block'>
 					<h1 className='text-2xl m-8 w-full'>Your Cart</h1>
 				</div>
 			)}
 			<div className='cart w-auto flex flex-wrap items-center justify-center gap-10'>
-				{CartStore.items.length < 1 ? (
+				{items.length < 1 ? (
 					<div className='flex m-12 flex-col gap-20 justify-center items-center'>
 						<h1 className='text-2xl'>No data - Your cart is Empty !</h1>
 						<Link href={"/"}>
@@ -87,7 +89,7 @@ export default function Cart() {
 					</div>
 				) : (
 					<>
-						{CartStore.items.map((item, i) => (
+						{items.map((item, i) => (
 							<div
 								key={i}
 								className='flex flex-col gap-20 justify-center items-center'
@@ -98,7 +100,7 @@ export default function Cart() {
 					</>
 				)}
 				<div className='btn w-full '>
-					{CartStore.items.length > 0 && (
+					{items.length > 0 && (
 						<Button
 							onClick={showModal}
 							className='w-[50%] block mx-auto text-white mb-[30vh]'

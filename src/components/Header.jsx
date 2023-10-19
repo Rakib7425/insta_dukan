@@ -20,7 +20,7 @@ const Header = () => {
 					<img src='/iFerry.png' alt='logo' className='h-10' />
 				</Link>
 			</div>
-			<div className='mx-6 flex gap-5'>
+			<div className='mx-6 flex gap-5 items-center'>
 				<Link href='/' className='hover:text-yellow-200 duration-100'>
 					<span>Home</span>
 				</Link>
@@ -33,7 +33,7 @@ const Header = () => {
 				</Link>
 				{/* {CartStore.bookedItemsLength > 0 && */}
 				<Link href='/booked' className='hover:text-yellow-200 duration-100'>
-					<span>My Bookings</span>
+					<span>Bookings</span>
 				</Link>
 				{/* } */}
 			</div>

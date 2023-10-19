@@ -5,38 +5,104 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 
 import CartStore from "../../stores/cartStore";
+import { Avatar, Card, Skeleton } from "antd";
+import Meta from "antd/es/card/Meta";
 
 const BookedData = () => {
 	const [items, setItems] = useState(CartStore.bookedItems);
+	const loading = false;
+	const [passengerName, setPassengerName] = useState(
+		CartStore.bookedItems[0]?.passengerNames || ["Rakib", "Hello"]
+	);
 
 	useEffect(() => {
 		setItems(CartStore.bookedItems);
 		// console.log(items.passengerNames);
-		//
+
+		const makePassengerNames = () => {
+			let tempNames = passengerName.map((item) => {
+				return item;
+			});
+			console.log(tempNames);
+			setPassengerName(tempNames);
+			// let names = tempNames
+		};
+
+		makePassengerNames();
 	}, []);
 
 	return (
-		<>
+		<section className='min-h-screen w-full '>
 			<Header />
-			<div className='min-h-screen w-full'>
-				<h1>Booked Products</h1>
+			<h1 className='m-8 text-2xl text-center'>Your Booked Products</h1>
+			<div className='flex mx-auto gap-4 w-[90%] flex-wrap h-screen items-start justify-center'>
 				{items &&
 					items.map((item, i) => {
 						return (
-							<div className='item' key={item + i}>
-								<div>{item.noOfPassenger}</div>
-								<div>{item.date}</div>
-								<div>{item.email}</div>
-								<div>{item.passengerNames}</div>
+							<div className='card' key={item + i}>
+								<>
+									<Card
+										style={{
+											width: 300,
+											// marginTop: 16,
+										}}
+										loading={loading}
+									>
+										<Meta
+											avatar={
+												<Avatar src='https://xsgames.co/randomusers/avatar.php?g=pixel&key=1' />
+											}
+											title={passengerName[0] || null}
+											description={""}
+										/>
+
+										<div className='item mt-3' key={item + i}>
+											<div>No Of Passenger : {item.noOfPassenger}</div>
+											<div>Date: {item.date}</div>
+											<div>Email: {item.email}</div>
+											{/* {item.passengerNames.split(" ")} */}
+											<div>
+												Passenger Names:
+												{passengerName &&
+													passengerName.map((nam, j) => (
+														<>
+															<p className='name' key={nam}>
+																Passenger {j + 1}: {nam}
+															</p>
+														</>
+													))}
+											</div>
+										</div>
+									</Card>
+								</>
 							</div>
-							// noOfPassenger,
-							// date,
-							// email,
-							// passengerNames,
 						);
 					})}
+
+				{/* <div className='card'>
+					<Card
+						style={{
+							width: 300,
+						}}
+						loading={loading}
+					>
+						<Meta
+							avatar={
+								<Avatar src='https://xsgames.co/randomusers/avatar.php?g=pixel&key=1' />
+							}
+							title='Card title'
+							description='This is the description'
+						/>
+						<div className='item' key={"item + i"}>
+							<div>{"item.noOfPassenger"}</div>
+							<div>{"item.date"}</div>
+							<div>{"item.email"}</div>
+							<div>{"item.passengerNames"}</div>
+						</div>
+					</Card>
+				</div> */}
 			</div>
-		</>
+		</section>
 	);
 };
 
