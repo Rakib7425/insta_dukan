@@ -10,7 +10,6 @@ import { useRouter } from "next/navigation";
 import CartItem from "@/components/CartItem";
 import CustomFormItem from "@/components/CustomFormItem";
 
-
 export default function Cart() {
 	const [open, setOpen] = useState(false);
 	const [noOfPassenger, setNoOfPassenger] = useState(1);
@@ -18,7 +17,7 @@ export default function Cart() {
 	const [email, setEmail] = useState("");
 	const [date, setDate] = useState("");
 	const [passengerNames, setPassengerNames] = useState([]);
-	const [items, setItems] = useState(CartStore.items);
+	const [items, setItems] = useState([]);
 
 	const router = useRouter();
 
@@ -34,8 +33,9 @@ export default function Cart() {
 			return arr;
 		};
 		makeTempArr();
+		setItems(CartStore.items);
 		// console.log(arr);
-	}, [noOfPassenger]);
+	}, [noOfPassenger, items.length]);
 
 	const showModal = () => {
 		setOpen(!open);
@@ -64,7 +64,12 @@ export default function Cart() {
 		// console.log(dateString);
 		setDate(dateString);
 	};
+	const handleClearCart = () => {
+		CartStore.clearCart();
+		setItems([]);
+	};
 
+	//
 	return (
 		<>
 			<div className='header w-full'>
@@ -106,12 +111,22 @@ export default function Cart() {
 				)}
 				<div className='btn w-full '>
 					{items.length > 0 && (
-						<Button
-							onClick={showModal}
-							className='w-[50%] block mx-auto text-white mb-[30vh]'
-						>
-							Checkout
-						</Button>
+						<>
+							<Button
+								onClick={showModal}
+								className='w-[50%] block mx-auto text-white mb-3'
+							>
+								Checkout
+							</Button>
+
+							<Button
+								danger
+								onClick={handleClearCart}
+								className='w-[50%] block mx-auto text-white mb-[30vh]'
+							>
+								Clear Cart
+							</Button>
+						</>
 					)}
 				</div>
 				{/* Passenger Information Modal */}
