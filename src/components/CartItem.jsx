@@ -9,6 +9,7 @@ const CartItem = ({ item }) => {
 				hoverable
 				style={{
 					width: 300,
+					textAlign: "center",
 				}}
 				title={item.name}
 				cover={
@@ -21,7 +22,7 @@ const CartItem = ({ item }) => {
 					/>
 				}
 			>
-				<p>Price: ₹{item.price}</p>
+				<p className='font-semibold'>Price: ₹{item.price}</p>
 				<p>{item.description}</p>
 			</Card>
 		</div>
