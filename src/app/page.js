@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "../components/Header";
 import Loader from "@/components/Loader";
 import MainContent from "./MainContent";
-import CartStore from "@/stores/cartStore";
 
 export default function Home() {
 	const [isLoading, setIsLoading] = useState(false);
@@ -26,10 +25,16 @@ export default function Home() {
 				console.error(error);
 			}
 		}
-		if (CartStore.items) {
-			console.log(CartStore.items);
-		}
+
 		fetchProducts();
+
+		// if (initialProducts.length > 0) {
+		// 	// console.log(initialProducts);
+		// 	setInitialProducts(products);
+		// 	setProducts(initialProducts);
+		// } else {
+		// console.log("No data");
+		// }
 	}, []);
 
 	if (isLoading) {

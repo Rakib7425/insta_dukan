@@ -3,6 +3,7 @@ import { action, makeAutoObservable, makeObservable, observable } from "mobx";
 import { useObserver } from "mobx-react-lite";
 
 class CartStore {
+	initialItems = [];
 	items = [];
 	length = 0;
 	bookedItems = [];
@@ -10,6 +11,10 @@ class CartStore {
 
 	constructor() {
 		makeAutoObservable(this);
+	}
+
+	addToInitialState(products) {
+		this.initialItems.push(products);
 	}
 
 	// Method to add a product to the cart.

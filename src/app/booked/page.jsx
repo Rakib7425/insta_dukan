@@ -79,11 +79,9 @@ const BookedData = () => {
 												<span className='font-bold'>Passenger Names:-</span>
 												{passengerName &&
 													passengerName.map((nam, j) => (
-														<>
-															<p className='name' key={nam}>
-																Passenger {j + 1}: {nam}
-															</p>
-														</>
+														<p className='name' key={nam + j}>
+															Passenger {j + 1}: {nam}
+														</p>
 													))}
 											</div>
 										</div>
@@ -92,29 +90,6 @@ const BookedData = () => {
 							</div>
 						);
 					})}
-
-				{/* <div className='card'>
-					<Card
-						style={{
-							width: 300,
-						}}
-						loading={loading}
-					>
-						<Meta
-							avatar={
-								<Avatar src='https://xsgames.co/randomusers/avatar.php?g=pixel&key=1' />
-							}
-							title='Card title'
-							description='This is the description'
-						/>
-						<div className='item' key={"item + i"}>
-							<div>{"item.noOfPassenger"}</div>
-							<div>{"item.date"}</div>
-							<div>{"item.email"}</div>
-							<div>{"item.passengerNames"}</div>
-						</div>
-					</Card>
-				</div> */}
 			</div>
 		</section>
 	);
