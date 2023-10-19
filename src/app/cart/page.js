@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import CartItem from "@/components/CartItem";
 import CustomFormItem from "@/components/CustomFormItem";
-import { useObserver } from "mobx-react-lite";
+
 
 export default function Cart() {
 	const [open, setOpen] = useState(false);

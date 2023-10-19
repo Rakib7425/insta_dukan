@@ -1,6 +1,5 @@
 import { Card, Image } from "antd";
 import React from "react";
-import { useObserver } from "mobx-react-lite";
 
 const CartItem = ({ item }) => {
 	return (

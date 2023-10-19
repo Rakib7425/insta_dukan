@@ -4,14 +4,10 @@ import { Badge } from "antd";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import CartStore from "../stores/cartStore";
+import { observer } from "mobx-react";
 
-const Header = () => {
-	const [itemsLength, setItemsLength] = useState(CartStore.length);
-
-	useEffect(() => {
-		setItemsLength(CartStore.length);
-		// console.log(itemsLength);
-	}, [itemsLength]);
+const Header = observer(() => {
+	const itemsLength = CartStore.length;
 
 	return (
 		<div className='header w-full flex gap-4 justify-between items-center text-xl shadow-xl bg-cyan-900 h-12 rounded-md '>
@@ -39,6 +35,6 @@ const Header = () => {
 			</div>
 		</div>
 	);
-};
+});
 
 export default Header;

@@ -1,13 +1,11 @@
-import { action, makeAutoObservable, makeObservable, observable } from "mobx";
-
-import { useObserver } from "mobx-react-lite";
+import { makeAutoObservable } from "mobx";
 
 class CartStore {
 	initialItems = [];
 	items = [];
 	length = 0;
 	bookedItems = [];
-	bookedItemsLength = [];
+	bookedItemsLength = 0; // Change to a number
 
 	constructor() {
 		makeAutoObservable(this);
@@ -26,7 +24,7 @@ class CartStore {
 	// Method to add a product to the booked section.
 	addToBooked(product) {
 		this.bookedItems.push(product);
-		this.bookedItemsLength = this.bookedItemsLength + 1;
+		this.bookedItemsLength++;
 	}
 
 	clearCart() {
@@ -35,5 +33,4 @@ class CartStore {
 	}
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default new CartStore();

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 
 import CartStore from "../../stores/cartStore";
-import { Avatar, Button, Card, Result, Skeleton } from "antd";
+import { Avatar, Button, Card, Result } from "antd";
 import Meta from "antd/es/card/Meta";
 import Link from "next/link";
 
