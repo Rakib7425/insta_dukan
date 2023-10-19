@@ -43,18 +43,16 @@ export default function Cart() {
 
 	const onFinish = (values) => {
 		// Passenger information and checkout
-
-		setOpen(false);
-		toast.success(`Successfully Booked`);
-		const product = {
-			noOfPassenger,
-			date,
-			email,
-			passengerNames,
-		};
-		CartStore.addToBooked(product);
-		CartStore.clearCart();
-		router.push("/booked");
+		if (noOfPassenger && noOfPassenger && date && email && passengerNames) {
+			setOpen(false);
+			toast.success(`Successfully Booked`);
+			const product = { noOfPassenger, date, email, passengerNames };
+			CartStore.addToBooked(product);
+			CartStore.clearCart();
+			router.push("/booked");
+		} else {
+			toast.warn(`All Fields are required!`);
+		}
 	};
 
 	const handleChange = (value) => {
