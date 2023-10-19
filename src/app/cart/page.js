@@ -53,7 +53,7 @@ export default function Cart() {
 			passengerNames,
 		};
 		CartStore.addToBooked(product);
-		// CartStore.clearCart();
+		CartStore.clearCart();
 		router.push("/booked");
 	};
 
