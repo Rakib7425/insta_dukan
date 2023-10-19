@@ -35,15 +35,15 @@ const BookedData = () => {
 	return (
 		<section className='min-h-screen w-full '>
 			<Header />
-			<div className='header-text flex flex-col items-center justify-center'>
-				<h1 className='my-8 text-2xl text-center'>
-					{items.length < 1 ? `No Booking Found` : `Your Booked Products`}
+			<div className='header-text flex gap-20 flex-col items-center justify-center'>
+				<h1 className='my-12 text-2xl text-center'>
+					{items.length < 1 ? `No Booking Found !` : `Your Booked Products`}
 				</h1>
 				{items.length < 1 && (
 					<>
 						<div className='btn '>
 							<Link href={"/"}>
-								<Button className=''>Book Now</Button>
+								<Button className='text-white'>Book Now</Button>
 							</Link>
 						</div>
 					</>
