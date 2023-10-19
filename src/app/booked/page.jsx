@@ -33,7 +33,7 @@ const BookedData = () => {
 	}, []);
 
 	return (
-		<section className='min-h-screen mb-4 w-full '>
+		<section className='min-h-screen w-full '>
 			<Header />
 			<div className='header-text flex gap-20 flex-col items-center justify-center'>
 				<h1 className={`${items.length < 1 ? "mt-12" : "my-12"} text-2xl text-center`}>
@@ -51,10 +51,10 @@ const BookedData = () => {
 				)}
 			</div>
 
-			{!!items &&
-				items.map((item, i) => {
-					return (
-						<div className='flex mx-auto gap-4 w-[90%] flex-wrap h-screen items-start justify-center'>
+			<div className='flex mx-auto gap-4 w-[90%] flex-wrap h-screen items-start justify-center'>
+				{!!items &&
+					items.map((item, i) => {
+						return (
 							<div className='card' key={item + i}>
 								<>
 									<Card
@@ -90,9 +90,9 @@ const BookedData = () => {
 									</Card>
 								</>
 							</div>
-						</div>
-					);
-				})}
+						);
+					})}
+			</div>
 		</section>
 	);
 };
