@@ -20,10 +20,10 @@ Welcome to E-Commerce Application! This document provides an overview of the app
     -   [Adding Items to Cart](#adding-items-to-cart)
     -   [Checkout System](#checkout-system)
     -   [Managing User Data](#managing-user-data)
--   [Contributing](#contributing)
--   [License](#license)
 
 ## Introduction
+
+<!-- -   [Contributing](#contributing) -->
 
 This E-Commerce Application is a powerful platform that provides users with a seamless shopping experience. This application is designed to allow users to browse products, add them to their cart, complete the checkout process, and manage their booking data.
 
