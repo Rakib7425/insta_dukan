@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useObserver } from "mobx-react-lite";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import Header from "../components/Header";
 import Loader from "@/components/Loader";
 import MainContent from "./MainContent";
@@ -9,6 +9,8 @@ import MainContent from "./MainContent";
 export default function Home() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [products, setProducts] = useState([]);
+
+	// Call the Items from API
 	useEffect(() => {
 		async function fetchProducts() {
 			setIsLoading(true);
