@@ -5,9 +5,9 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 
 import CartStore from "../../stores/cartStore";
-import { Avatar, Button, Card, Result } from "antd";
-import Meta from "antd/es/card/Meta";
+import { Button, Result } from "antd";
 import Link from "next/link";
+import BookedCard from "@/components/BookedCard";
 
 const BookedData = () => {
 	const [items, setItems] = useState(CartStore.bookedItems);
@@ -53,40 +53,19 @@ const BookedData = () => {
 				{!!items &&
 					items.map((item, i) => {
 						return (
-							<div className='card' key={item + i}>
-								<>
-									<Card
-										style={{
-											width: 300,
-											// marginTop: 16,
-										}}
-										loading={loading}
-									>
-										<Meta
-											avatar={
-												<Avatar src='https://xsgames.co/randomusers/avatar.php?g=pixel&key=1' />
-											}
-											title={passengerName[0] || null}
-											description={""}
-										/>
-
-										<div className='item mt-3' key={item + i}>
-											<div>No Of Passenger : {item.noOfPassenger}</div>
-											<div>Date: {item.date}</div>
-											<div>Email: {item.email}</div>
-											{/* {item.passengerNames.split(" ")} */}
-											<div>
-												<span className='font-bold'>Passenger Names:-</span>
-												{passengerName &&
-													passengerName.map((nam, j) => (
-														<p className='name' key={nam + j}>
-															Passenger {j + 1}: {nam}
-														</p>
-													))}
-											</div>
-										</div>
-									</Card>
-								</>
+							<div className='cards flex gap-4 flex-wrap' key={item + i}>
+								{!!item.items &&
+									item.items.map((products, index) => (
+										<section key={index}>
+											<BookedCard
+												i={i}
+												item={item}
+												products={products}
+												loading={loading}
+												passengerName={passengerName}
+											/>
+										</section>
+									))}
 							</div>
 						);
 					})}

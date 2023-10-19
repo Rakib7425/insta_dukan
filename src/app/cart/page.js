@@ -45,7 +45,7 @@ export default function Cart() {
 		if (noOfPassenger && noOfPassenger && date && email && passengerNames) {
 			setOpen(false);
 			toast.success(`Successfully Booked`);
-			const product = { noOfPassenger, date, email, passengerNames };
+			const product = { noOfPassenger, date, email, passengerNames, items };
 			CartStore.addToBooked(product);
 			CartStore.clearCart();
 			router.push("/booked");
