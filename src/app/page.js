@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "../components/Header";
 import Loader from "@/components/Loader";
 import MainContent from "./MainContent";
+import CartStore from "@/stores/cartStore";
 
 export default function Home() {
 	const [isLoading, setIsLoading] = useState(false);
@@ -24,6 +25,9 @@ export default function Home() {
 				setIsLoading(false);
 				console.error(error);
 			}
+		}
+		if (CartStore.items) {
+			console.log(CartStore.items);
 		}
 		fetchProducts();
 	}, []);
