@@ -14,7 +14,8 @@ export default function Home() {
 		async function fetchProducts() {
 			setIsLoading(true);
 			try {
-				const res = await fetch("https://ferry-api.onrender.com/products");
+				// const res = await fetch("https://ferry-api.onrender.com/products"); // API hosted in Render
+				const res = await fetch("https://rakib7425.github.io/ferry_api_insta_dukan/"); // API hosted in gitHub
 				const data = await res.json();
 				setProducts(data);
 				// console.log(data);
