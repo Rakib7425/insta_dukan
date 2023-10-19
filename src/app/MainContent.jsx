@@ -1,7 +1,6 @@
 import cartStore from "@/stores/cartStore";
 import { Button, Card, Image } from "antd";
 import Meta from "antd/es/card/Meta";
-import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const MainContent = ({ products }) => {
@@ -22,14 +21,6 @@ const MainContent = ({ products }) => {
 									width: 310,
 								}}
 								cover={
-									// eslint-disable-next-line @next/next/no-img-element
-									// <img
-									//     src={`${product.image}`}
-									//     alt={product.name}
-									//     width={300}
-									//     height={300}
-									// />
-
 									<Image
 										src={`${product.image}`}
 										alt={product.name}

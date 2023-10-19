@@ -24,9 +24,8 @@ const BookedData = () => {
 			let tempNames = passengerName.map((item) => {
 				return item;
 			});
-			// console.log(tempNames);
+			console.log(tempNames);
 			setPassengerName(tempNames);
-			// let names = tempNames
 		};
 
 		makePassengerNames();
