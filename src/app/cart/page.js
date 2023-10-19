@@ -158,7 +158,7 @@ export default function Cart() {
 
 						<Form.Item
 							name='date'
-							label='Date   &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;'
+							label='Date   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
 							required
 						>
 							<DatePicker status='warning' onChange={dateChange} className='w-full' />
