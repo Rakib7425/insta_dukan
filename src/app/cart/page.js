@@ -79,9 +79,15 @@ export default function Cart() {
 			)}
 			<div className='cart w-auto flex flex-wrap items-center justify-center gap-10'>
 				{items.length < 1 ? (
-					<div className='flex m-12 flex-col gap-20 justify-center items-center'>
+					<div className='flex  flex-col gap-20 justify-center items-center min-h-screen'>
 						<h1 className='text-2xl'>No data - Your cart is Empty !</h1>
-						<img src='/empty-cart.png' alt='noItem' width={"30%"} />
+						<img
+							src='/empty-cart.png'
+							alt='noItem'
+							width={"30%"}
+							height={"30%"}
+							className='min-h-[30%]'
+						/>
 						<Link href={"/"} className='w-[60%]'>
 							<Button className='text-white mb-[25.5vh] w-[100%] '>Add now</Button>
 						</Link>
