@@ -6,7 +6,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 # E-Commerce Application
 
-Welcome to our E-Commerce Application! This document provides an overview of the application, its key features, and instructions on how to set it up and use it.
+Welcome to E-Commerce Application! This document provides an overview of the application, its key features, and instructions on how to set it up and use it.
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@ Welcome to our E-Commerce Application! This document provides an overview of the
 
 ## Introduction
 
-Our E-Commerce Application is a powerful platform that provides users with a seamless shopping experience. This application is designed to allow users to browse products, add them to their cart, complete the checkout process, and manage their booking data.
+This E-Commerce Application is a powerful platform that provides users with a seamless shopping experience. This application is designed to allow users to browse products, add them to their cart, complete the checkout process, and manage their booking data.
 
 ## Key Features
 
