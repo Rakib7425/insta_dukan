@@ -81,11 +81,7 @@ export default function Cart() {
 				{items.length < 1 ? (
 					<div className='flex m-12 flex-col gap-20 justify-center items-center'>
 						<h1 className='text-2xl'>No data - Your cart is Empty !</h1>
-						<img
-							src='https://th.bing.com/th/id/R.afa6a28d0ee0b5e7d55b7a5aecdfedec?rik=eOl3Z%2bU0XvmYlw&riu=http%3a%2f%2fiticsystem.com%2fimg%2fempty-cart.png&ehk=0omil1zRH7T3Pb5iTzvueamUQLSSb55vgY7dLFF8Bl8%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1'
-							alt='noItem'
-							width={"30%"}
-						/>
+						<img src='/empty-cart.png' alt='noItem' width={"30%"} />
 						<Link href={"/"} className='w-[60%]'>
 							<Button className='text-white mb-[25.5vh] w-[100%] '>Add now</Button>
 						</Link>

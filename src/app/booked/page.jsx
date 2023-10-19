@@ -33,7 +33,7 @@ const BookedData = () => {
 	}, []);
 
 	return (
-		<section className='min-h-screen w-full '>
+		<section className='min-h-screen mb-4 w-full '>
 			<Header />
 			<div className='header-text flex gap-20 flex-col items-center justify-center'>
 				<h1 className={`${items.length < 1 ? "mt-12" : "my-12"} text-2xl text-center`}>
