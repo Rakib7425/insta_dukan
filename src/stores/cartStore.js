@@ -5,7 +5,7 @@ class CartStore {
 	items = [];
 	length = 0;
 	bookedItems = [];
-	bookedItemsLength = 0; // Change to a number
+	bookedItemsLength = 0;
 
 	constructor() {
 		makeAutoObservable(this);

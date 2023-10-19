@@ -2,7 +2,7 @@
 
 import { Badge } from "antd";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import CartStore from "../stores/cartStore";
 import { observer } from "mobx-react";
 

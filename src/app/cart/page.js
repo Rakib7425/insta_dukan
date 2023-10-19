@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Modal, Form, Input, Button, Card, Select, DatePicker, Space } from "antd";
+import { Modal, Form, Input, Button, Select, DatePicker } from "antd";
 import CartStore from "../../stores/cartStore";
 import Header from "@/components/Header";
 import Link from "next/link";

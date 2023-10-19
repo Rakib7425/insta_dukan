@@ -1,7 +1,7 @@
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
-import { Provider } from "mobx-react";
-import CartStore from "@/stores/cartStore";
+// import { Provider } from "mobx-react";
+// import CartStore from "@/stores/cartStore";
 
 export const metadata = {
 	title: "iFerry- Rakib",
