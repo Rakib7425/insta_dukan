@@ -76,7 +76,7 @@ const BookedData = () => {
 											<div>Email: {item.email}</div>
 											{/* {item.passengerNames.split(" ")} */}
 											<div>
-												Passenger Names:
+												<span className='font-bold'>Passenger Names:-</span>
 												{passengerName &&
 													passengerName.map((nam, j) => (
 														<>
