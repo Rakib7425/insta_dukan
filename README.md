@@ -47,7 +47,7 @@ This E-Commerce Application is a powerful platform that provides users with a se
 
 ## Getting Started
 
-To get started with our E-Commerce Application, follow these simple steps:
+To get started with my E-Commerce Application, follow these simple steps:
 
 ### Prerequisites
 
