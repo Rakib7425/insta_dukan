@@ -62,6 +62,14 @@ To get started with our E-Commerce Application, follow these simple steps:
     git clone https://github.com/Rakib7425/insta_dukan.git
     ```
 
+Now run--
+
+```bash
+npm install
+# or
+yarn
+```
+
 Horrayy!.. run the development server:
 
 ```bash
