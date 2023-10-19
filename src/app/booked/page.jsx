@@ -5,8 +5,9 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 
 import CartStore from "../../stores/cartStore";
-import { Avatar, Card, Skeleton } from "antd";
+import { Avatar, Button, Card, Skeleton } from "antd";
 import Meta from "antd/es/card/Meta";
+import Link from "next/link";
 
 const BookedData = () => {
 	const [items, setItems] = useState(CartStore.bookedItems);
@@ -34,7 +35,20 @@ const BookedData = () => {
 	return (
 		<section className='min-h-screen w-full '>
 			<Header />
-			<h1 className='m-8 text-2xl text-center'>Your Booked Products</h1>
+			<div className='header-text flex flex-col items-center justify-center'>
+				<h1 className='my-8 text-2xl text-center'>
+					{items.length < 1 ? `No Booking Found` : `Your Booked Products`}
+				</h1>
+				{items.length < 1 && (
+					<>
+						<div className='btn '>
+							<Link href={"/"}>
+								<Button className=''>Book Now</Button>
+							</Link>
+						</div>
+					</>
+				)}
+			</div>
 			<div className='flex mx-auto gap-4 w-[90%] flex-wrap h-screen items-start justify-center'>
 				{items &&
 					items.map((item, i) => {
