@@ -41,7 +41,7 @@ const MainContent = ({ products }) => {
 							>
 								{/* <h5 className='text-lg'>{product.name}</h5> */}
 								<Meta title={product.name} />
-								<p>Price: ₹{product.price}</p>
+								<p className='font-semibold mt-1'>Price: ₹{product.price}</p>
 								<Button
 									onClick={() => addToCart(product)}
 									className='border border-blue-500 my-2 hover:bg-blue-100'
