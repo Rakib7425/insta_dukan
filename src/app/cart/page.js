@@ -84,13 +84,13 @@ export default function Cart() {
 
 			{/* Cart Section */}
 			{items.length > 0 && (
-				<div className='cart block'>
+				<div className='cart block mt-8'>
 					<h1 className='text-2xl m-8 w-full'>Your Cart</h1>
 				</div>
 			)}
 			<div className='cart w-auto flex flex-wrap items-center justify-center gap-10'>
 				{items.length < 1 ? (
-					<div className='flex  flex-col gap-20 justify-center items-center min-h-screen'>
+					<div className='flex  flex-col gap-20 justify-center items-center min-h-screen mt-8'>
 						<h1 className='text-2xl'>No data - Your cart is Empty !</h1>
 						<img
 							src='/empty-cart.png'

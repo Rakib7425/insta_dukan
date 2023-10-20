@@ -30,7 +30,7 @@ const BookedData = () => {
 	}, []);
 
 	return (
-		<section className='min-h-screen w-full '>
+		<section className='min-h-screen w-full mt-8'>
 			<Header />
 			{/* Booked data section */}
 			<div className='header-text flex gap-20 flex-col items-center justify-center'>
