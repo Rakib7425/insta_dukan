@@ -9,23 +9,25 @@ import { Button, Result } from "antd";
 import Link from "next/link";
 import BookedCard from "@/components/BookedCard";
 
-const BookedData = () => {
+import { observer } from "mobx-react-lite";
+
+const BookedData = observer(() => {
 	const [items, setItems] = useState(CartStore.bookedItems);
 	const loading = false;
-	const [passengerName, setPassengerName] = useState(
-		CartStore.bookedItems[0]?.passengerNames || ["Rakib", "Hello"]
+	const [passengerNames, setPassengerNames] = useState(
+		CartStore.bookedItems[items.length - 1]?.passengerNames || ["Rakib", "Hello"]
 	);
 
 	useEffect(() => {
 		setItems(CartStore.bookedItems);
 
 		const makePassengerNames = () => {
-			let tempNames = passengerName.map((item) => {
+			let tempNames = passengerNames.map((item) => {
 				return item;
 			});
-			setPassengerName(tempNames);
+			setPassengerNames(tempNames);
 		};
-
+		// console.log(CartStore.bookedItems);
 		makePassengerNames();
 	}, []);
 
@@ -62,7 +64,7 @@ const BookedData = () => {
 												item={item}
 												products={products}
 												loading={loading}
-												passengerName={passengerName}
+												passengerNames={passengerNames}
 											/>
 										</section>
 									))}
@@ -72,6 +74,6 @@ const BookedData = () => {
 			</div>
 		</section>
 	);
-};
+});
 
 export default BookedData;

@@ -2,7 +2,7 @@ import { Avatar, Card } from "antd";
 import Meta from "antd/es/card/Meta";
 import React from "react";
 
-const BookedCard = ({ i, item, products, loading, passengerName }) => {
+const BookedCard = ({ i, item, products, loading, passengerNames }) => {
 	return (
 		<Card
 			style={{
@@ -14,7 +14,7 @@ const BookedCard = ({ i, item, products, loading, passengerName }) => {
 		>
 			<Meta
 				avatar={<Avatar src='https://xsgames.co/randomusers/avatar.php?g=pixel&key=1' />}
-				title={passengerName[0] || null}
+				title={passengerNames[0] || null}
 				description={""}
 			/>
 
@@ -29,8 +29,8 @@ const BookedCard = ({ i, item, products, loading, passengerName }) => {
 				{/* {item.passengerNames.split(" ")} */}
 				<div>
 					<span className='font-bold'>Passenger Names:-</span>
-					{passengerName &&
-						passengerName.map((nam, j) => (
+					{passengerNames &&
+						passengerNames.map((nam, j) => (
 							<p className='name' key={nam + j}>
 								Passenger {j + 1}: {nam}
 							</p>
