@@ -2,7 +2,7 @@ This is a [Next.js]
 
 ## Getting Started
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [https://insta-dukan.vercel.app/](https://insta-dukan.vercel.app/) with your browser to see the result.
 
 # E-Commerce Application
 
