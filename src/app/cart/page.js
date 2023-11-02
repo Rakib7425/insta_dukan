@@ -9,8 +9,9 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import CartItem from "@/components/CartItem";
 import CustomFormItem from "@/components/CustomFormItem";
+import { observer } from "mobx-react-lite";
 
-export default function Cart() {
+const Cart = observer(() => {
 	const [open, setOpen] = useState(false);
 	const [noOfPassenger, setNoOfPassenger] = useState(1);
 	const [tempArr, setTempArr] = useState([]);
@@ -25,6 +26,7 @@ export default function Cart() {
 
 	useEffect(() => {
 		const makeTempArr = () => {
+			// eslint-disable-next-line react-hooks/exhaustive-deps
 			arr = [];
 			for (let i = 0; i < noOfPassenger; i++) {
 				arr.push(i);
@@ -92,6 +94,8 @@ export default function Cart() {
 				{items.length < 1 ? (
 					<div className='flex  flex-col gap-20 justify-center items-center min-h-screen mt-8'>
 						<h1 className='text-2xl'>No data - Your cart is Empty !</h1>
+
+						{/* eslint-disable-next-line @next/next/no-img-element */}
 						<img
 							src='/empty-cart.png'
 							alt='noItem'
@@ -218,4 +222,6 @@ export default function Cart() {
 			</div>
 		</>
 	);
-}
+});
+
+export default Cart;

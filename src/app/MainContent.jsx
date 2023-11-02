@@ -4,12 +4,14 @@ import Meta from "antd/es/card/Meta";
 import { toast } from "react-toastify";
 
 const MainContent = ({ products }) => {
+	/* The function addToCart adds a product to the cart and displays a success toast message.*/
 	const addToCart = (product) => {
 		cartStore.addToCart(product);
 		toast.success(`Product added to cart!`);
 	};
+
 	return (
-		<div className='flex-col mt-8 flex-wrap justify-between items-center gap-4 text-center h-screen'>
+		<div className='flex-col mt-8 flex-wrap justify-between items-center gap-4 text-center min-h-screen h-full mb-6 px-10'>
 			<h1 className='text-2xl m-8'>Ferry Services</h1>
 			<div className='flex flex-col flex-wrap justify-between items-center gap-4 md:flex-row text-center'>
 				{products &&

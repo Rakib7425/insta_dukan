@@ -22,7 +22,7 @@ export default function Home() {
 				); // API hosted in gitHub
 				const data = await res.json();
 				setProducts(data);
-				// console.log(data);
+
 				setIsLoading(false);
 			} catch (error) {
 				setIsLoading(false);
@@ -32,13 +32,8 @@ export default function Home() {
 
 		fetchProducts();
 		// ? TODO Check if items already available
-		/* if (initialProducts.length > 0) {
-			console.log(initialProducts);
-			setInitialProducts(products);
-			setProducts(initialProducts);
-		} else {
-			console.log("No data");
-		} */
+
+		//
 	}, []);
 
 	if (isLoading) {

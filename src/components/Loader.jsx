@@ -219,32 +219,7 @@ const Loader = () => {
 				<Skeleton.Avatar active={active} size={size} shape={avatarShape} />
 				<Skeleton.Input active={active} size={size} />
 			</Space>
-			<Space>
-				<Skeleton.Button active={active} size={size} shape={buttonShape} block={block} />
-				<Skeleton.Avatar active={active} size={size} shape={avatarShape} />
-				<Skeleton.Input active={active} size={size} />
-			</Space>
-			<Space>
-				<Skeleton.Button active={active} size={size} shape={buttonShape} block={block} />
-				<Skeleton.Avatar active={active} size={size} shape={avatarShape} />
-				<Skeleton.Input active={active} size={size} />
-			</Space>
-			<Divider />
-			<Space>
-				<Skeleton.Button active={active} size={size} shape={buttonShape} block={block} />
-				<Skeleton.Avatar active={active} size={size} shape={avatarShape} />
-				<Skeleton.Input active={active} size={size} />
-			</Space>
-			<Space>
-				<Skeleton.Button active={active} size={size} shape={buttonShape} block={block} />
-				<Skeleton.Avatar active={active} size={size} shape={avatarShape} />
-				<Skeleton.Input active={active} size={size} />
-			</Space>
-			<Space>
-				<Skeleton.Button active={active} size={size} shape={buttonShape} block={block} />
-				<Skeleton.Avatar active={active} size={size} shape={avatarShape} />
-				<Skeleton.Input active={active} size={size} />
-			</Space>
+
 			<Divider />
 		</div>
 	);

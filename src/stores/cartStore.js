@@ -1,7 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
 class CartStore {
-	initialItems = [];
 	items = [];
 	length = 0;
 	bookedItems = [];
@@ -11,14 +10,19 @@ class CartStore {
 		makeAutoObservable(this);
 	}
 
-	addToInitialState(products) {
-		this.initialItems.push(products);
-	}
-
 	// Method to add a product to the cart.
 	addToCart(product) {
 		this.items.push(product);
 		this.length = this.items.length;
+	}
+
+	// Method to remove a product from the cart by ID.
+	removeFromCart(productId) {
+		const index = this.items.findIndex((item) => item.id === productId);
+		if (index !== -1) {
+			this.items.splice(index, 1);
+			this.length = this.items.length;
+		}
 	}
 
 	// Method to add a product to the booked section.
@@ -33,4 +37,5 @@ class CartStore {
 	}
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default new CartStore();

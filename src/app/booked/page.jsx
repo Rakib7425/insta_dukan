@@ -29,6 +29,8 @@ const BookedData = observer(() => {
 		};
 		// console.log(CartStore.bookedItems);
 		makePassengerNames();
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
